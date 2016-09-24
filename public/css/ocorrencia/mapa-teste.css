@@ -1,0 +1,26 @@
+/*bado *, *>*{ 
+    font-family: arial; 
+}*/
+
+#map-content {
+    width: 100%;
+    height: 100%;
+}
+
+#map {  
+  height: 100%;
+  width: 100%;
+}
+
+#categorias {
+    position: absolute; 
+    top: 15px; 
+    right: 15px; 
+    width: 250px; 
+    min-height: 250px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 13px;
+}
+

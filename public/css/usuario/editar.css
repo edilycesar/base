@@ -1,0 +1,11 @@
+#grupo-content {
+  clear: both;
+  overflow: hidden;
+  width: 100%;
+}
+
+#grupo-content > .grupo-item {
+  float: left;
+  font-size: 10px;
+  margin: 6px;
+}

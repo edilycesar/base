@@ -1,0 +1,49 @@
+.alert-loko-content {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 5;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   text-align: center;      
+}
+
+.alert-loko-content > .alert-loko-box {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 3%;
+  min-height: 10%;
+  padding: 15px;
+  position: relative;
+  text-align: left;
+  width: 30%;
+}
+
+.alert-loko-content > .alert-loko-box > img {
+  float: left;
+  height: 83px;
+  margin: 0 10px 0 0;
+}
+
+.alert-loko-content > .alert-loko-box > .botao2 {
+  bottom: 11px;
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+}
+
+.alert-loko-content > .alert-loko-box > p {
+  padding-bottom: 20px;
+}
+
+#sem-conf-email-aviso {
+  background-color: yellow;
+  font-size: 11px;
+  text-align: center;
+}

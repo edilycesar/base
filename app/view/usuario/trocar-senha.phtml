@@ -1,0 +1,23 @@
+<?php 
+$this->obj->headAddCss('css/usuario/editar.css');
+$this->obj->headAddJsFile('js/usuario/editar.js');
+?>
+<div class="painel-topo">
+    <h1 class="fa-user"> Usuário - trocar senha</h1>
+    <div class="link1 fa-angle-double-left" onclick="history.go(-1)"> Voltar</div>
+</div>
+<form id="usuarioForm" class="form1" action="usuario/alterarPropriaSenhaGravar" method="post" autocomplete="off">
+    <div class="form-item">
+        <label>Senha</label>
+        <input type="password" name="senha" placeholder="Mínimo 5 caracteres" value=" "/>
+        <!-- value tem que ter espaço para prevenir o autocomplete do navegador -->
+    </div>    
+    <div class="form-item">
+        <label>Repita a senha</label>
+        <input type="password" name="senha2" value=" "/>
+        <!-- value tem que ter espaço para prevenir o autocomplete do navegador -->
+    </div> 
+    <div class="painel">
+        <input type="submit" value="Gravar"> 
+    </div>
+</form>

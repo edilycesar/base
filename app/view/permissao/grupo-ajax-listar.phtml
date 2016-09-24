@@ -1,0 +1,34 @@
+<?php
+$grupoLista = $this->dados['grupoLista'];
+
+foreach ($grupoLista as $dados) {
+    $membrosLista = $dados['membrosLista'];
+    ?>
+    <div id="<?php echo $dados['nome']?>" class="recurso_item_content">                                                
+        <label><?php echo strtoupper($dados['descricao'])?> <span>(<?php echo strtoupper($dados['nome'])?>)<span></label>                
+        <div class="campo_content">                               
+            <input id="<?php echo $dados['nome']?>_input" class="input" type="text" onkeyup="permissao.listarUsuario('<?php echo $dados['nome']?>', this)" placeholder="Adicionar Usuário"/> 
+            <input id="<?php echo $dados['nome']?>_input" class="input" type="text" onkeyup="permissao.listarUsuarioGrupo('<?php echo $dados['nome']?>', this)" placeholder="Adicionar Grupo"/> 
+            <div id="<?php echo $dados['nome']?>_sel">
+            <?php
+            foreach ($membrosLista as $usuarios) {
+                $usuario = $usuarios['usuario'];
+                $class = "";
+                $class .=  " " . $dados['nome'] . "_sel_item";
+                $class .= " sel_item ";
+                $nome = isset($usuario['usuario']) ? $usuario['usuario'] . "(U)" : $usuario['nome'] . "(G)";                    
+                ?>
+                <div class='<?php echo $class?>' title="<?php echo $nome?>">
+                    <div class='item_id'><?php echo $usuario['id']?></div>
+                    <div class='item_nome'><?php echo $nome?></div>
+                    <div class='item_apagar' onclick="permissao.apagar(this, '<?php echo $usuarios['permissao_id']?>')">X</div>
+                </div>
+                <?php
+            }
+            ?>
+            </div>
+            <div id="<?php echo $dados['nome']?>_ret" class="busca_resultado"></div>
+        </div>
+    </div>
+    <?php
+}

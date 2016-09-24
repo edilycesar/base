@@ -1,0 +1,15 @@
+#filter-content {
+    /*display: none;*/
+}
+
+#filter-content select {
+  width:200px;
+}
+
+#filter-content input[type="text"] {
+  width:200px;
+}
+
+#filter-content {
+    display: none;
+}

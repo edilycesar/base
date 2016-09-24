@@ -1,0 +1,765 @@
+[
+    {
+        "name": "guzzlehttp/promises",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/promises.git",
+            "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/promises/zipball/c10d860e2a9595f8883527fa0021c7da9e65f579",
+            "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2016-05-18 16:56:05",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Promise\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle promises library",
+        "keywords": [
+            "promise"
+        ]
+    },
+    {
+        "name": "psr/http-message",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-message.git",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-08-06 14:39:51",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Message\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP messages",
+        "homepage": "https://github.com/php-fig/http-message",
+        "keywords": [
+            "http",
+            "http-message",
+            "psr",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "guzzlehttp/psr7",
+        "version": "1.3.1",
+        "version_normalized": "1.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/psr7.git",
+            "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/psr7/zipball/5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
+            "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "psr/http-message": "~1.0"
+        },
+        "provide": {
+            "psr/http-message-implementation": "1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2016-06-24 23:00:38",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Psr7\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "PSR-7 message implementation",
+        "keywords": [
+            "http",
+            "message",
+            "stream",
+            "uri"
+        ]
+    },
+    {
+        "name": "guzzlehttp/guzzle",
+        "version": "6.2.1",
+        "version_normalized": "6.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle.git",
+            "reference": "3f808fba627f2c5b69e2501217bf31af349c1427"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/3f808fba627f2c5b69e2501217bf31af349c1427",
+            "reference": "3f808fba627f2c5b69e2501217bf31af349c1427",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/promises": "^1.0",
+            "guzzlehttp/psr7": "^1.3.1",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "phpunit/phpunit": "^4.0",
+            "psr/log": "^1.0"
+        },
+        "time": "2016-07-15 17:22:37",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "6.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/functions_include.php"
+            ],
+            "psr-4": {
+                "GuzzleHttp\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle is a PHP HTTP client library",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ]
+    },
+    {
+        "name": "league/csv",
+        "version": "8.1.1",
+        "version_normalized": "8.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/csv.git",
+            "reference": "3b22a40804aa0bc5224ffb2f5e8248edf0a9a38c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/csv/zipball/3b22a40804aa0bc5224ffb2f5e8248edf0a9a38c",
+            "reference": "3b22a40804aa0bc5224ffb2f5e8248edf0a9a38c",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^1.9",
+            "phpunit/phpunit": "^4.0"
+        },
+        "time": "2016-09-05 08:16:07",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "8.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Csv\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ignace Nyamagana Butera",
+                "email": "nyamsprod@gmail.com",
+                "homepage": "https://github.com/nyamsprod/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Csv data manipulation made easy in PHP",
+        "homepage": "http://csv.thephpleague.com",
+        "keywords": [
+            "csv",
+            "export",
+            "filter",
+            "import",
+            "read",
+            "write"
+        ]
+    },
+    {
+        "name": "aura/view",
+        "version": "2.2.0",
+        "version_normalized": "2.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/auraphp/Aura.View.git",
+            "reference": "c7d9ca4aab74f2b1d1837b13519c5fafaded966d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/auraphp/Aura.View/zipball/c7d9ca4aab74f2b1d1837b13519c5fafaded966d",
+            "reference": "c7d9ca4aab74f2b1d1837b13519c5fafaded966d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "aura/di": "~2.0"
+        },
+        "time": "2016-01-21 18:31:00",
+        "type": "library",
+        "extra": {
+            "aura": {
+                "type": "library",
+                "config": {
+                    "common": "Aura\\View\\_Config\\Common"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Aura\\View\\": "src/",
+                "Aura\\View\\_Config\\": "config/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-2-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Aura.View Contributors",
+                "homepage": "https://github.com/auraphp/Aura.View/contributors"
+            }
+        ],
+        "description": "Provides an implementation of the TemplateView and TwoStepView patterns, with support for helpers and for closures as templates, using PHP itself as the templating language.",
+        "homepage": "https://github.com/auraphp/Aura.View",
+        "keywords": [
+            "Escape",
+            "escaper",
+            "escaping",
+            "template",
+            "template view",
+            "two step view",
+            "two-step view",
+            "twostep view",
+            "view"
+        ]
+    },
+    {
+        "name": "hoa/exception",
+        "version": "1.16.01.11",
+        "version_normalized": "1.16.01.11",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hoaproject/Exception.git",
+            "reference": "fa4a9648aef2c8ca8f4cd543429b24dc8feaa366"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hoaproject/Exception/zipball/fa4a9648aef2c8ca8f4cd543429b24dc8feaa366",
+            "reference": "fa4a9648aef2c8ca8f4cd543429b24dc8feaa366",
+            "shasum": ""
+        },
+        "require": {
+            "hoa/consistency": "~1.0",
+            "hoa/event": "~1.0"
+        },
+        "require-dev": {
+            "hoa/test": "~2.0"
+        },
+        "time": "2016-01-11 08:38:17",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hoa\\Exception\\": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ivan Enderlin",
+                "email": "ivan.enderlin@hoa-project.net"
+            },
+            {
+                "name": "Hoa community",
+                "homepage": "http://hoa-project.net/"
+            }
+        ],
+        "description": "The Hoa\\Exception library.",
+        "homepage": "http://hoa-project.net/",
+        "keywords": [
+            "exception",
+            "library"
+        ]
+    },
+    {
+        "name": "hoa/consistency",
+        "version": "1.16.03.03",
+        "version_normalized": "1.16.03.03",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hoaproject/Consistency.git",
+            "reference": "aa7e30f99aa2ae476f83800d3ad350506eec153b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hoaproject/Consistency/zipball/aa7e30f99aa2ae476f83800d3ad350506eec153b",
+            "reference": "aa7e30f99aa2ae476f83800d3ad350506eec153b",
+            "shasum": ""
+        },
+        "require": {
+            "hoa/exception": "~1.0",
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "hoa/stream": "~1.0",
+            "hoa/test": "~2.0"
+        },
+        "time": "2016-03-03 09:37:24",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hoa\\Consistency\\": "."
+            },
+            "files": [
+                "Prelude.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ivan Enderlin",
+                "email": "ivan.enderlin@hoa-project.net"
+            },
+            {
+                "name": "Hoa community",
+                "homepage": "http://hoa-project.net/"
+            }
+        ],
+        "description": "The Hoa\\Consistency library.",
+        "homepage": "http://hoa-project.net/",
+        "keywords": [
+            "autoloader",
+            "callable",
+            "consistency",
+            "entity",
+            "flex",
+            "keyword",
+            "library"
+        ]
+    },
+    {
+        "name": "hoa/event",
+        "version": "1.16.03.15",
+        "version_normalized": "1.16.03.15",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hoaproject/Event.git",
+            "reference": "b1577069d63d6efc559406f3bc31813ac33e76b8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hoaproject/Event/zipball/b1577069d63d6efc559406f3bc31813ac33e76b8",
+            "reference": "b1577069d63d6efc559406f3bc31813ac33e76b8",
+            "shasum": ""
+        },
+        "require": {
+            "hoa/consistency": "~1.0",
+            "hoa/exception": "~1.0"
+        },
+        "require-dev": {
+            "hoa/test": "~2.0"
+        },
+        "time": "2016-03-15 14:49:59",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hoa\\Event\\": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ivan Enderlin",
+                "email": "ivan.enderlin@hoa-project.net"
+            },
+            {
+                "name": "Hoa community",
+                "homepage": "http://hoa-project.net/"
+            }
+        ],
+        "description": "The Hoa\\Event library.",
+        "homepage": "http://hoa-project.net/",
+        "keywords": [
+            "event",
+            "library",
+            "listener",
+            "observer"
+        ]
+    },
+    {
+        "name": "hoa/zformat",
+        "version": "1.16.03.15",
+        "version_normalized": "1.16.03.15",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hoaproject/Zformat.git",
+            "reference": "d261637aa6f4485d697ebcb898a379f7a34b4e34"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hoaproject/Zformat/zipball/d261637aa6f4485d697ebcb898a379f7a34b4e34",
+            "reference": "d261637aa6f4485d697ebcb898a379f7a34b4e34",
+            "shasum": ""
+        },
+        "require": {
+            "hoa/consistency": "~1.0",
+            "hoa/exception": "~1.0"
+        },
+        "time": "2016-03-15 14:55:30",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hoa\\Zformat\\": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ivan Enderlin",
+                "email": "ivan.enderlin@hoa-project.net"
+            },
+            {
+                "name": "Hoa community",
+                "homepage": "http://hoa-project.net/"
+            }
+        ],
+        "description": "The Hoa\\Zformat library.",
+        "homepage": "http://hoa-project.net/",
+        "keywords": [
+            "library",
+            "parameter",
+            "zformat"
+        ]
+    },
+    {
+        "name": "hoa/router",
+        "version": "3.16.01.14",
+        "version_normalized": "3.16.01.14",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hoaproject/Router.git",
+            "reference": "ecbd82ce37882701c36f85712b8e6129cea1a6ef"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hoaproject/Router/zipball/ecbd82ce37882701c36f85712b8e6129cea1a6ef",
+            "reference": "ecbd82ce37882701c36f85712b8e6129cea1a6ef",
+            "shasum": ""
+        },
+        "require": {
+            "hoa/consistency": "~1.0",
+            "hoa/exception": "~1.0",
+            "hoa/zformat": "~1.0"
+        },
+        "time": "2016-01-14 21:11:16",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hoa\\Router\\": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ivan Enderlin",
+                "email": "ivan.enderlin@hoa-project.net"
+            },
+            {
+                "name": "Hoa community",
+                "homepage": "http://hoa-project.net/"
+            }
+        ],
+        "description": "The Hoa\\Router library.",
+        "homepage": "http://hoa-project.net/",
+        "keywords": [
+            "cli",
+            "http",
+            "library",
+            "router"
+        ]
+    },
+    {
+        "name": "hoa/dispatcher",
+        "version": "1.16.01.15",
+        "version_normalized": "1.16.01.15",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hoaproject/Dispatcher.git",
+            "reference": "a0ea27587a0a12ddcee6a00fac5ebc158a2186c3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hoaproject/Dispatcher/zipball/a0ea27587a0a12ddcee6a00fac5ebc158a2186c3",
+            "reference": "a0ea27587a0a12ddcee6a00fac5ebc158a2186c3",
+            "shasum": ""
+        },
+        "require": {
+            "hoa/consistency": "~1.0",
+            "hoa/exception": "~1.0",
+            "hoa/zformat": "~1.0"
+        },
+        "require-dev": {
+            "hoa/router": "~3.0",
+            "hoa/test": "~2.0",
+            "hoa/view": "~3.0"
+        },
+        "suggest": {
+            "hoa/router": "Provide routers.",
+            "hoa/view": "Provide view interface."
+        },
+        "time": "2016-01-14 20:52:21",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hoa\\Dispatcher\\": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ivan Enderlin",
+                "email": "ivan.enderlin@hoa-project.net"
+            },
+            {
+                "name": "Hoa community",
+                "homepage": "http://hoa-project.net/"
+            }
+        ],
+        "description": "The Hoa\\Dispatcher library.",
+        "homepage": "http://hoa-project.net/",
+        "keywords": [
+            "dispatcher",
+            "kit",
+            "library"
+        ]
+    },
+    {
+        "name": "hoa/view",
+        "version": "3.16.01.11",
+        "version_normalized": "3.16.01.11",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hoaproject/View.git",
+            "reference": "aa3ed78ea12e797d741dd7890be1ca70a64759ac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hoaproject/View/zipball/aa3ed78ea12e797d741dd7890be1ca70a64759ac",
+            "reference": "aa3ed78ea12e797d741dd7890be1ca70a64759ac",
+            "shasum": ""
+        },
+        "require": {
+            "hoa/consistency": "~1.0"
+        },
+        "require-dev": {
+            "hoa/test": "~2.0"
+        },
+        "suggest": {
+            "hoa/router": "Provide routers.",
+            "hoa/stream": "Provide stream interfaces."
+        },
+        "time": "2016-01-11 09:52:52",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hoa\\View\\": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ivan Enderlin",
+                "email": "ivan.enderlin@hoa-project.net"
+            },
+            {
+                "name": "Hoa community",
+                "homepage": "http://hoa-project.net/"
+            }
+        ],
+        "description": "The Hoa\\View library.",
+        "homepage": "http://hoa-project.net/",
+        "keywords": [
+            "library",
+            "render",
+            "view"
+        ]
+    }
+]

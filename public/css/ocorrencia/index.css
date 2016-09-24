@@ -1,0 +1,16 @@
+#categorias {
+    position: absolute; 
+    top: 15px; 
+    right: 15px; 
+    width: 250px; 
+    min-height: 250px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 13px;  
+    opacity: 0.8;
+}
+
+#categorias:hover {
+    opacity: 1;
+}

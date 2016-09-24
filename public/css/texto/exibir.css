@@ -1,0 +1,7 @@
+#texto-content {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  display: inline-block;
+  max-width: 900px;
+  padding: 10px;
+}

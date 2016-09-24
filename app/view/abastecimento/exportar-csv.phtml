@@ -1,0 +1,39 @@
+<?php
+$titles = array("ID", "Alertas", "Momento", "Secretaria", "Computador",
+    "Motorista", "Veículo", "Tipo", "Placa", "Km", "Comb.", "Lt", "Valor", "Valor total");
+
+foreach ($titles as $title) {
+    echo mb_convert_encoding($title, "ISO-8859-1") . ";"; 
+}
+echo "\n";
+
+foreach ($abastecimentos as $abastecimento) { 
+    
+    $row = array( $abastecimento['abaId'], 
+        $abastecimento['alertas'], 
+        Date::toBr($abastecimento['abaMomento']), 
+        $abastecimento['secNome'], 
+        $abastecimento['hostNome'], 
+        $abastecimento['motNome'], 
+        $abastecimento['fabNome'] . " " . $abastecimento['modNome'], 
+        $abastecimento['carTipo'], 
+        $abastecimento['placa'], 
+        $abastecimento['abUltimoKm'], 
+        $abastecimento['comNome'], 
+        $abastecimento['abaLt'], 
+        number_format($abastecimento['comValor'], 2, ",", "."), 
+        number_format($abastecimento['abaValorTot'], 2, ",", ".")
+    );
+    
+    foreach ($row as $cel) {
+        echo Csv::prepareData($cel) . ";"; 
+    }    
+    echo "\n";
+} 
+    
+
+/*  echo $carro['secretariaNome']?>;<?php echo $carro['divisaoNome']?>;<?php echo $carro['fabricanteNome']?> / <?php echo $carro['modeloNome'], $carro['carroTipo']", "$carro['carroPasseLivre'] == 1 ?  "&bull;"  : "" ", "$carro['carroCota']", "$carro['carroAbMesAtual']", "$carro['carroAbMediaKmLt']", "$carro['carroCodigo']", "$carro['carroPlaca']?>;
+ */
+  
+
+

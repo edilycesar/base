@@ -1,0 +1,43 @@
+<div class="painel-topo">
+    <h1 class="fa-pencil"> Textos</h1>
+    <div class="link1 fa-angle-double-left" onclick="history.go(-1)"> Voltar</div>
+    <div class="link1 fa-plus-square" onclick="location='texto/admEditar'"> Novo</div>
+</div>
+<div class="paginacao-indice">
+    <?php 
+    for($i=0; $i<$nPaginas; $i++){
+        $class = $i == $pagina ? 'pgatual' : '';
+        ?>
+        <div onclick="location='texto/index/pagina/<?php echo $i?>/quantpp/<?php echo $quantPP?>'"
+             class="<?php echo $class?>"><?php echo $i+1?></div>
+        <?php 
+    }?>
+</div>
+<table class="tabela1">
+    <tr>
+        <th>Criação</th>
+        <th>Tipo</th>
+        <th>Categoria</th>
+        <th>Referência</th>  
+        <th>Título</th>
+        <th>&nbsp;</th>
+    </tr>
+<?php
+foreach ($this->dados['textoLista'] as $texto){
+    ?>
+    <tr>
+        <td><?php echo Date::toBr($texto['created_at'])?></td>
+        <td><?php echo $texto['texto_sistema'] == 1 ? 'Sistema' : ''?></td>        
+        <td><?php echo $texto['texto_cat']?></td>        
+        <td><?php echo $texto['texto_ref']?></td>        
+        <td><?php echo $texto['texto_titulo']?></td>        
+        <td>
+            <div class="link1" onclick="location='texto/admEditar/id/<?php echo $texto['texto_id']?>'"/>Gerenciar</div>
+        </td>
+    </tr>
+    <?php    
+}
+?>
+</table>
+
+

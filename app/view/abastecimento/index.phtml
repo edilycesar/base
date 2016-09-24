@@ -1,0 +1,135 @@
+<!--<link href="css/abastecimento/index.css" rel="stylesheet" type="text/css"/>-->
+<script src="js/abastecimento/index.js" type="text/javascript"></script>
+
+<h1 class="titulo1">Abastecimentos (<?php echo $ano ?>)</h1>
+
+<?php for($i = (int)date('Y'); $i > 2012; $i--) { ?>
+
+<?php } ?>
+
+<nav id="menu2" class="menu1">
+    <ul>
+        <li><div class="fa-th" title="Exportar para planilha" 
+        onclick="location='<?php echo BASE_URL?>abastecimento/exportarCsv/queryKey/<?php echo $lastQueryKey?>'"></div></li> 
+                 
+        <li><div class="fa-print" title="Imprimir" 
+        onclick="location='<?php echo BASE_URL?>abastecimento/exportarImpressao/queryKey/<?php echo $lastQueryKey?>'"></div></li>         
+            
+<!--        <li><div id="btFilter" class="fa-plus-square-o" title="Cadastrar novo" 
+            onclick="location='abastecimento/editar'"></div></li>      -->
+    </ul>    
+</nav>
+
+<div id="filter-content" class="clear box1">
+    
+    <form id="carFormFilter" class="" action="" method="post">
+        
+        <div class="form-item">
+            
+            <label class="checkboxListLabel">
+                <input id='secsSelMestre' onclick="checkbox.selMestre(this, 'secsItem')" 
+                       type="checkbox" checked="" />Secretarias
+            </label>
+            
+            <?php foreach ($secretarias as $secretaria) { ?>
+            <div class='checkboxListItem'>
+                <input class="secsItem" type="checkbox" 
+                       value="<?php echo $secretaria['id']?>"
+                       <?php echo array_search($secretaria['id'], $secs) !== false ? " checked='' " : ""?>
+                       /> <?php echo $secretaria['nome']?>
+            </div>
+            <?php } ?>
+        </div>
+        
+        <div class="form-item">
+            
+            <label class="checkboxListLabel">
+                <input id='combsSelMestre' onclick="checkbox.selMestre(this, 'combsItem')" 
+                       type="checkbox" checked="" />Combustíveis
+            </label>
+            
+            <?php foreach ($combustiveis as $combustivel) { ?>
+            <div class='checkboxListItem'>
+                <input class="combsItem" type="checkbox" 
+                       value="<?php echo $combustivel['id']?>"
+                       <?php echo array_search($combustivel['id'], $combs) !== false ? " checked='' " : ""?>
+                       /> <?php echo $combustivel['nome']?>
+            </div>
+            <?php } ?>
+        </div>
+        
+        <div class="clear">&nbsp;</div>
+        
+        <div class="form-item">
+            
+            <label>Buscar</label>
+            
+            <select id="buscarCol">
+                <option value=""></option>
+                <option value="mot.nome"   <?php echo $buscarCol == "mot.nome"   ? " selected ='' " : ""?> >Motorista</option>
+                <option value="car.placa" <?php echo $buscarCol == "car.placa" ? " selected ='' " : ""?> >Placa</option>
+                <option value="car.tipo"   <?php echo $buscarCol == "car.tipo"   ? " selected ='' " : ""?> >Veículo tipo</option>
+            </select>
+            
+            <input type="text" id="buscar" value="<?php echo $buscar?>" placeholder=""/>
+        </div>
+        
+        <div class="clear">&nbsp;</div>
+        
+        <div class="form-item">
+            <label>&nbsp;</label>
+            <input type="submit" value="OK"/>            
+        </div>
+    </form>
+</div>
+
+<input id="currentPg" type="hidden" value="<?php echo $paginator->pgCurrent ?>"/>
+
+<?php // echo $lastQueryKey?>
+
+<div id="info-box">
+    <strong>Num. registros: </strong> <?php echo $totNumRows?>
+</div>
+
+<div class="paginator clear">
+    <?php for($p=0; $p<=$paginator->nPg; $p++){
+        $class = $p == $paginator->pgCurrent ? 'sel' : '';
+        ?><a class="<?php echo $class?> pgButton" data-pg="<?php echo $p?>" ><?php echo $p+1?></a><?php }?>
+</div>  
+
+<table id="abastecimentos" class="tabela2">
+    <tr>
+        <th>ID</th>
+        <th>Alertas</th>
+        <th>Momento</th>
+        <th>Secretaria</th>
+        <th>Computador</th>
+        <th>Motorista</th>
+        <th>Veículo</th>
+        <th>Tipo</th>
+        <th>Placa</th>
+        <th>Km</th>
+        <th>Comb.</th>
+        <th>Lt</th>
+        <th>Valor</th>        
+        <th>Valor total</th>        
+    </tr>
+    <?php foreach ($abastecimentos as $abastecimento) { ?>
+    <tr>
+        <td><?php echo $abastecimento['abaId']?></td>
+        <td><?php echo $abastecimento['alertas']?></td>
+        <td><?php echo Date::toBr($abastecimento['abaMomento'])?></td>
+        <td><?php echo $abastecimento['secNome']?></td>
+        <td><?php echo $abastecimento['hostNome']?></td>
+        <td><?php echo $abastecimento['motNome']?></td>
+        <td><?php echo $abastecimento['fabNome']?> <?php echo $abastecimento['modNome']?></td>
+        <td><?php echo $abastecimento['carTipo']?></td>
+        <td><?php echo $abastecimento['placa']?></td>
+        <td><?php echo $abastecimento['abUltimoKm']?></td>
+        <td><?php echo $abastecimento['comNome']?></td>
+        <td><?php echo $abastecimento['abaLt']?></td>
+        <td><?php echo number_format($abastecimento['comValor'], 2, ",", ".")?></td>
+        <td><?php echo number_format($abastecimento['abaValorTot'], 2, ",", ".")?></td>        
+    </tr>
+    <?php } ?>
+</table>

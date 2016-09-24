@@ -1,0 +1,28 @@
+<link href="css/categoria/exibir.css" rel="stylesheet" type="text/css"/>
+<h1 class="titulo1"><?php echo $categoria['titulo']?></h1>
+<div id="categoria-exibir-content" style="background-image: url(files/<?php echo $categoria['capa']?>)">
+    <section id="categoria-info">
+        <div id="cat-texto" class="titulo2">
+            <?php echo $categoria['descricao']?>
+        </div>    
+    </section>
+    <section id="produtos">
+        <?php 
+        foreach ($produtos as $produto){        
+            $img = isset($produto['imagens'][0]['arquivo_nome']) 
+                    ? "files/{$produto['imagens'][0]['arquivo_nome']}" 
+                    : "img/logo-mini.png";
+            ?>
+            <div class="produtos-item" onclick="location='produto/exibir/id/<?php echo $produto['id']?>'">
+                <img class="capa" src="<?php echo $img?>" alt=""/>
+                <h3 class="titulo3"><?php echo $produto['nome']?></h3>
+                <div class="descri texto1">
+                    <?php echo substr($produto['descricao'], 0, 200)?>
+                    <?php echo strlen($produto['descricao']) >= 200 ? "..." : ""?>
+                </div>
+                <img class="produtos-item-bt" src="img/icons2/add13.png" alt="Veja mais"/>
+            </div>
+            <?php     
+        } ?>
+    </section>
+</div>

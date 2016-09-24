@@ -1,0 +1,23 @@
+<h1 class="titulo1">Categorias</h1>
+<div class="painel1">
+    <div class="botao-menu2" onclick="location='categoria/admEditar'">
+        <img src="img/icons2/wand2.png" alt=""/> Nova categoria
+    </div>
+</div>
+<table class="tabela1">
+    <tr>
+        <th>Título</th>
+        <th></th>
+    </tr>
+    <?php foreach ($categorias as $categoria): ?>
+    <tr>
+        <td><?php echo $categoria['titulo']?></td>
+        <td class="" style="text-align: right">
+            <img class="icone" src="img/icons2/view28.png" alt="Editar" 
+                 onclick="location='categoria/admEditar/id/<?php echo $categoria['id']?>'"/>
+            <img class="icone" src="img/icons2/bin9.png" alt="Apagar" 
+                 onclick="global.confirma('categoria/admApagar/id/<?php echo $categoria['id']?>', '')"/>
+        </td>
+    </tr>
+    <?php endforeach;?>
+</table>

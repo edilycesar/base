@@ -1,0 +1,7 @@
+<?php
+$grupoLista = $this->dados['grupoLista'];
+foreach ($grupoLista as $dados) {
+    ?>
+    <div class="usuario_grupo_lista_item" title="<?php echo $dados['id']?>"><?php echo $dados['nome']?></div>
+    <?php
+}

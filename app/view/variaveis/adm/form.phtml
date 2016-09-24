@@ -1,0 +1,33 @@
+<div class="painel-topo">
+    <h1 class="fa-cog"> Variáveis</h1>
+    <div class="link1 fa-angle-double-left" onclick="history.go(-1)"> Voltar</div>
+</div>
+<form id="form_variavel" class="form1" action="variavel/admGravar" method="POST" enctype="multipart/form-data">         
+    <div class="form-item">
+        <div class="aviso">
+            <p><strong>ATENÇÃO!!! Siga corretamente as instruções abaixo.</strong></p>
+            <p><?php echo isset($variavel['variavel_obs']) ? $variavel['variavel_obs'] : ''?></p>
+        </div>
+        <div class="clear">&nbsp;</div>
+        <label>
+            <?php echo isset($variavel['variavel_nome']) ? $variavel['variavel_nome'] : ''?>
+             - <?php echo isset($variavel['variavel_alias']) ? $variavel['variavel_alias'] : ''?>
+        </label>
+        
+        <?php if($variavel['tipo'] == "booleano"){ ?>
+            <select name="variavel_valor">
+                <option value="1" <?php echo $variavel['variavel_valor'] == 1 ? "selected=''" : "" ?> >Sim</option>
+                <option value="0" <?php echo $variavel['variavel_valor'] == 0 ? "selected=''" : "" ?> >Não</option>
+            </select>
+        <?php }elseif($variavel['tipo'] == "cor"){ ?>
+            <input type="color" name="variavel_valor" value="<?php echo isset($variavel['variavel_valor']) ? $variavel['variavel_valor'] : ''?>"/> 
+        <?php }else{ ?>
+            <textarea name="variavel_valor"><?php echo isset($variavel['variavel_valor']) ? $variavel['variavel_valor'] : ''?></textarea>
+        <?php } ?>   
+            
+    </div>    
+    <input type="hidden" name="variavel_id" value="<?php echo isset($variavel['variavel_id']) ? $variavel['variavel_id'] : ''?>"/>                    
+    <div class="painel1">
+        <input class="botao1" type="submit" value="Gravar"/>
+    </div>    
+</form>

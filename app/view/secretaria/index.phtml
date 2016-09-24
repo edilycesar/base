@@ -1,0 +1,16 @@
+<h1 class="titulo1">Secretaria</h1>
+
+<table class="tabela2">
+    <tr>
+        <th>Secretaria</th>
+        <th></th>
+    </tr>
+    <?php foreach ($secretarias as $secretaria) { ?>
+    <tr>
+        <td><?php echo $secretaria['nome']?></td>
+        <td>
+            <div class="link1 fa-cog" onclick="location='secretaria/editar/id/<?php echo $secretaria['id']?>'"> Gerenciar</div>
+        </td>
+    </tr>
+    <?php } ?>
+</table>

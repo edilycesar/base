@@ -1,0 +1,80 @@
+<link href="css/usuario/editar.css" rel="stylesheet" type="text/css"/>
+<script src="js/usuario/editar.js" type="text/javascript"></script>
+
+<h1 class="fa-user"> Usuário - criar/editar</h1>
+
+<div class="painel1">
+    <div class="link1 fa-angle-double-left" onclick="history.go(-1)"> Voltar</div>
+</div>
+
+<form id="usuarioForm" class="form1" action="usuario/gravar" method="post" autocomplete="off">
+    
+    <input type="hidden" id="gravarSenha" name="gravarSenha" value="<?php echo isset($id) && $id == 0 ? 1 : 0 ?>" />
+    <input type="hidden" name="id" value="<?php echo isset($id) ? $id : 0 ?>" />
+    
+    <div class="form-item">
+        <label>Tipo de usuário</label>
+        
+        <input id="super0" type="radio" name="super" required="" value="0" 
+            <?php echo isset($super) && $super == 0 ? "checked=''" : ''?> />Normal
+        
+        <input id="super1" type="radio" name="super" required="" value="1" 
+            <?php echo isset($super) && $super == 1 ? "checked=''" : ''?> />Super       
+        
+    </div>
+    
+    <div class="form-item">
+        <label>Nome</label>
+        <input type="text" name="nome" required="" value="<?php echo isset($nome) ? $nome : '' ?>"
+               autofocus=""/>
+    </div>
+    <div class="form-item">
+        <label>E-mail</label>
+        <input type="email" name="email" required="" value="<?php echo isset($email) ? $email : '' ?>"/>
+    </div>
+    <div class="form-item">
+        <label>Login</label>
+        <input type="text" name="usuario" required="" value="<?php echo isset($usuario) ? $usuario : '' ?>"
+               autofocus=""/>
+    </div>
+    <div class="form-item">
+        <label>Secretaria</label>
+        <select name="secretaria_id" required="">
+            <option></option>
+            <?php foreach ($secretarias as $secretaria):?>
+                <option value="<?php echo $secretaria['id']?>" 
+                    <?php echo $secretaria['id'] == isset($secretaria_id) && $secretaria_id == $secretaria['id'] ? "selected=''" : ""?> >
+                    <?php echo $secretaria['nome']?>
+                </option>
+            <?php endforeach;?>
+        </select>        
+    </div>
+    <div id="grupo-content" class="form-item">
+        <label>Grupos</label>
+        <?php foreach ($grupos as $grupo):?>
+            <div class="grupo-item">
+                <input type="checkbox" name="grupos[]" value="<?php echo $grupo['id']?>"
+                    <?php echo array_search($grupo['id'], $gruposMembro) !== false ? "checked=''" : ""?>
+                    />
+                    <?php echo $grupo['nome']?>
+            </div>
+        <?php endforeach;?>
+    </div>
+    <div class="form-item">
+        <label>Senha</label>
+        <input id="senha" type="password" name="senha" 
+               placeholder="Mínimo 5 caracteres" value="" 
+               minlength="5"
+               onclick="this.value=''"
+               />
+        <!-- value tem que ter espaço para prevenir o autocomplete do navegador -->
+    </div>    
+    <div class="form-item">
+        <label>Repita a senha</label>
+        <input type="password" name="senha2" value="" onclick="this.value=''"/>
+        <!-- value tem que ter espaço para prevenir o autocomplete do navegador -->
+    </div> 
+    <div class="painel clear">
+        <input type="submit" value="Gravar"> 
+    </div>
+</form>

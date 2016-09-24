@@ -1,0 +1,43 @@
+.recurso_item_content {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  margin: 10px;
+  min-height: 46px;
+  padding: 10px;
+}
+
+.recurso_item_content .botao{
+    float:right;
+}
+
+#formUsuario{
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+.select_loko .campo_content {  
+  width: 100%;
+}
+
+.nadmin {
+  color: red !important;
+}
+
+.usuario_lista_item {
+  cursor: pointer;
+}
+
+.usuario_lista_item:hover {
+  text-decoration: underline;
+}
+
+label { 
+  width: 320px;
+  text-align: left;
+}
+
+label span{
+    font-size: 9px;
+    color: #999999;
+}

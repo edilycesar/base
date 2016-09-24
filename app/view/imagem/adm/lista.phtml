@@ -1,0 +1,22 @@
+<script src="adm/js/arquivo/listar.js" type="text/javascript"></script>
+<div class="painel-topo">
+    <h1 class="fa-user"> Imagens</h1>
+    <div class="link1 fa-plus-square" onclick="location='imagem/admNova'"> Nova</div>    
+</div>
+<div class="aviso">Para alterar, clique sobre o título ou descrição.</div>
+<div class="galeria1">
+    <?php foreach ($imagens as $imagem) { ?>
+        <div class="">
+            <div class="sel_item">
+                <img class="thumbs1" src="files/<?php echo $imagem['arquivo_nome']?>" alt=""/>
+                <div class="item_apagar" onclick="global.confirma('imagem/admApagarArq/arq-id/<?php echo $imagem['arquivo_id']?>', '')" >X</div>
+                <div class="item_bt_texto" onclick="imagemAdm.setTitulo(<?php echo $imagem['arquivo_id']?>, this)">
+                    <?php echo !empty($imagem['titulo']) ? $imagem['titulo'] : 'Definir titulo'?>
+                </div>
+                <div class="item_bt_texto" onclick="imagemAdm.setTexto(<?php echo $imagem['arquivo_id']?>, this)">
+                    <?php echo !empty($imagem['texto']) ? $imagem['texto'] : 'Definir texto'?>
+                </div>                
+            </div> 
+        </div>
+    <?php } ?>
+</div>

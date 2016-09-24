@@ -1,0 +1,43 @@
+<table id="abastecimentos" class="tabela2">
+    <tr>
+        <th>ID</th>
+        <th>Alertas</th>
+        <th>Momento</th>
+        <th>Secretaria</th>
+        <th>Computador</th>
+        <th>Motorista</th>
+        <th>Veículo</th>
+        <th>Tipo</th>
+        <th>Placa</th>
+        <th>Km</th>
+        <th>Comb.</th>
+        <th>Lt</th>
+        <th>Valor</th>        
+        <th>Valor total</th>        
+    </tr>
+    <?php foreach ($abastecimentos as $abastecimento) { ?>
+    <tr>
+        <td><?php echo $abastecimento['abaId']?></td>
+        <td><?php echo $abastecimento['alertas']?></td>
+        <td><?php echo Date::toBr($abastecimento['abaMomento'])?></td>
+        <td><?php echo $abastecimento['secNome']?></td>
+        <td><?php echo $abastecimento['hostNome']?></td>
+        <td><?php echo $abastecimento['motNome']?></td>
+        <td><?php echo $abastecimento['fabNome']?> <?php echo $abastecimento['modNome']?></td>
+        <td><?php echo $abastecimento['carTipo']?></td>
+        <td><?php echo $abastecimento['placa']?></td>
+        <td><?php echo $abastecimento['abUltimoKm']?></td>
+        <td><?php echo $abastecimento['comNome']?></td>
+        <td><?php echo $abastecimento['abaLt']?></td>
+        <td><?php echo number_format($abastecimento['comValor'], 2, ",", ".")?></td>
+        <td><?php echo number_format($abastecimento['abaValorTot'], 2, ",", ".")?></td>        
+    </tr>
+    <?php } ?>
+</table>
+
+<?php if(isset($imprimir)){?>
+    <script>
+        window.print();
+        history.go(-1);
+    </script>
+<?php } ?>

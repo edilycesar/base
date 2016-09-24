@@ -1,0 +1,244 @@
+body, html {
+  background-color: #036164;
+  font-family: gt;
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+}
+
+/*
+#E69A28
+#AB2043
+#53AA25
+#3F84F9
+#CD4A2D
+#207578
+#691E73
+*/
+
+header {
+  margin: 0 1%;
+  overflow: hidden;
+}
+
+#barra-usu {
+  color: #ffffff;
+  font-family: gt;
+  font-size: 12px;
+  margin: 0;
+  padding: 3px 1%;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 0;
+}
+
+#barra-usu a {
+  color: inherit;
+  font-family: inherit;
+  font-size: 15px;
+  margin: 0 3px;
+}
+
+#logo {
+  background-color: #207578;
+  cursor: pointer;
+  float: left;
+  height: 38px;
+  margin: 6px 5px 0 0;
+  padding: 21px 12px;
+}
+
+nav#menu1 {
+    
+}
+
+nav.menu1 {
+  float: left;
+  margin: 6px 0 0;
+}
+
+nav.menu1 > ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav.menu1 ul > li {
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  height: 80px;
+  list-style: outside none none;
+  opacity: 0.9;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 86px;
+}
+
+nav.menu1 ul > li {
+    transition-duration: 0.7s;
+    -webkit-transition-duration: 0.5s;
+}
+
+nav.menu1 ul > li:hover {
+    opacity: 1;
+}
+
+nav.menu1 ul > li:nth-child(1) {
+    background-color: #E69A28;
+}
+
+nav.menu1 ul > li:nth-child(2) {
+    background-color: #AB2043;
+}
+
+nav.menu1 ul > li:nth-child(3) {
+    background-color: #53AA25;
+}
+
+nav.menu1 ul > li:nth-child(4) {
+    background-color: #3F84F9;
+}
+
+nav.menu1 ul > li:nth-child(5) {
+    background-color: #CD4A2D;
+}
+
+nav.menu1 ul > li:nth-child(6) {
+    background-color: #691e73;
+}
+
+nav.menu1 ul > li > .menu-icone {
+  font-size: 23px;
+  padding: 13px 0;
+}
+
+nav.menu1 ul > li > .menu-titulo {
+  bottom: 0;
+  font-size: 10px;
+  left: 0;
+  padding: 3px;
+  position: absolute;
+  text-align: left;
+}
+
+nav.menu1 ul > li > a {
+  color: #474747;
+  font-family: sans-serif;
+  font-size: 12px;
+  margin: 0 6px;
+  text-decoration: none !important;
+  border-bottom: solid 2px #FFFFFF;
+}
+
+nav.menu1 ul > li > a:hover {
+    border-bottom: solid 2px #000000;
+}
+
+#menu1-subitens {
+    display: none;
+}
+
+.menu1-subitens-ativo {
+  background-color: #036164;
+  color: #ffffff;
+  cursor: pointer;
+  max-width: 180px;
+  padding: 3px;
+  text-align: right;
+}
+
+#content {
+  background-color: #ffffff;
+  margin: 0 1%;
+  overflow: hidden;
+  padding: 1%;
+  width: 96%;
+  position: relative;
+  min-height: 100%;
+}
+
+/*
+* Paginador inicio
+*/
+
+.paginator {
+  margin: 10px 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.paginator a {
+  background-color: #036164;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  margin: 0 0 0 1px;
+  padding: 5px 0;
+  width: 25px;
+}
+
+.paginator a.sel {
+  background-color: #53aa25;
+}
+
+/*
+* Paginador fim
+*/
+
+/*
+* Menu 2 inicio
+*/
+
+nav#menu2 {
+  margin: 0;
+  position: absolute;
+  right: 4px;
+  top: 5px;
+}
+
+nav#menu2 ul > li {
+  height: 22px;
+  margin: 0;
+  padding: 4px 3px;
+  width: 25px;
+}
+
+/*
+* Menu 2 fim
+*/
+
+#content > #info-box {
+  font-size: 11px;
+  position: absolute;
+  right: 2px;
+  top: 38px;
+}
+
+#filter-content input[type='text'] {
+    width: 64px;
+}
+
+
+.checkboxListLabel {
+  line-height: 24px;
+}
+
+.checkboxListLabel > input {
+  border: 1px solid red;
+  float: left;
+}
+
+.checkboxListItem {
+  float: left;
+  font-size: 12px;
+  height: 23px;
+  line-height: 23px;
+  width: 307px;
+}
+
+.checkboxListItem > input[type='checkbox'] {
+  float: left;
+}
