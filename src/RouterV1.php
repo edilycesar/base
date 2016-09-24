@@ -1,5 +1,5 @@
 <?php
-namespace Edily\base;
+namespace Edily\Base;
 
 
 /**
