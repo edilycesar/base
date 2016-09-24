@@ -1,18 +1,37 @@
 {
-    "require": {        
-        "guzzlehttp/guzzle": "^6.2",
-        "league/csv": "^8.1",
-        "aura/view": "^2.2",
-        "hoa/router": "3.16.01.14",
-        "hoa/dispatcher": "1.16.01.15",
-        "hoa/view": "3.16.01.11"        
-    },
-    
-    "autoload": {
-        "psr-4": { 
-            "App\\Controller\\" : "app/controller",
-            "App\\Model\\" : "app/model"            
+    "name"       : "edily/base",
+    "description": "Edily\\Base library.",
+    "type"       : "library",
+    "keywords"   : ["edily", "base"],
+    "homepage"   : "http://jeitodigital.com.br/",
+    "license"    : "BSD-3-Clause",
+    "authors"    : [
+        {
+            "name" : "Edily Cesar Medule",
+            "email": "edilycesar@gmail.com"
+        },
+        {
+            "name"    : "Edily Base",
+            "homepage": "http://jeitodigital.com.br/"
         }
-    }  
-    
+    ],
+    "support": {
+        "email" : "edilycesar@gmail.com",        
+        "source": "https://github.com/edilycesar/base"
+    },
+    "require": {        
+    },
+    "require-dev": {        
+    },
+    "autoload": {
+        "psr-4": {
+            "Edily\\Base\\": "src/"            
+        }
+    },    
+    "suggest": {
+        
+    },
+    "extra": {
+       
+    }
 }
