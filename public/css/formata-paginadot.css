@@ -1,9 +1,0 @@
-.paginator {
-    position: relative;
-}
-
-.btNavAnt, .btNavPro {
-  display: inline-block;
-  padding: 0 9px;
-  cursor: pointer;
-}

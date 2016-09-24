@@ -1,9 +1,0 @@
-head, body {margin: 0;}
-
-#app-content {
-  display: none;
-  overflow: hidden;
-  height: auto;  
-}
-
-#app-wait {text-align: center; padding: 20% 0;}
