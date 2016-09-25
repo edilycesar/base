@@ -24,18 +24,19 @@ class Loader extends Intercept
 
     public function loadControllerAction()
     {
-        $controllerName = ucfirst($this->route->controller).'Controller';
+        $controllerName = ucfirst($this->route->controller) . '';
         $controllerFile = APP_CONTROLLER_PATH.'/'.$controllerName.'.php';
         if (!file_exists($controllerFile)) {
             die('Controller não encontrado: '.$controllerFile);
-        } else {
+        } else {           
+            
             $actionName = $this->route->action.'Action';
             $intercept = $this->interceptExists($controllerName, $this->route->action);
             if ($intercept !== false) {
-                $this->instantiate($intercept['class'], $intercept['method']);
+                //$this->instantiate($controllerFile, $intercept['class'], $intercept['method']);
             }
 
-            return $this->instantiate($controllerName, $actionName);
+            return $this->instantiate($controllerFile, $controllerName, $actionName);
         }
 
         return false;
@@ -46,9 +47,12 @@ class Loader extends Intercept
         return $this->loadControllerAction();
     }
 
-    private function instantiate($controllerName, $actionName)
+    private function instantiate($controllerFile, $controllerName, $actionName)
     {
+        $controllerName = APP_CONTROLLER_NAMESPACE . "\\" . $controllerName;
+        
         $this->obj = new $controllerName();
+        
         if (!method_exists($this->obj, $actionName)) {
             die('Action não encontrada: '.$actionName);
         } else {

@@ -7,3 +7,5 @@ define('APP_MODEL_PATH', APP_ROOT . '/model' );
 define('FW_ROOT', GL_ROOT . '/vendor/edily/base/' );
 define('FW_CLASS_PATH', FW_ROOT . '/src/' );
 define('VIEW_PATH', APP_ROOT . '/view' );
+
+define('APP_CONTROLLER_NAMESPACE', 'App\Controller' ); 
