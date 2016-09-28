@@ -23,7 +23,8 @@ class View
 
         //Create vars to layout
         foreach ($this->dados as $key => $value) {
-            $$key = $value;
+            $name = "view_" . $key;
+            $$name = $value;
         }
 
         if (file_exists($content)) {
@@ -58,7 +59,7 @@ class View
     private function prepareDataRec($dataRec)
     {
         $this->viewName = isset($dataRec['view']) ? $dataRec['view'] : 'index';
-        $this->dados = isset($dataRec['dados']) ? $dataRec['dados'] : null;
+        $this->dados = isset($dataRec['data']) ? $dataRec['data'] : null;
         $this->layoutName = isset($dataRec['layout']) ? $dataRec['layout'] : 'layout';
     }
 

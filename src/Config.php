@@ -78,7 +78,7 @@ class Config {
     {
         return !empty($this->viewPath) 
             ? $this->viewPath
-            : $this->appRoot . '/view';
+            : $this->getAppRoot() . '/view';
         
     }
     
