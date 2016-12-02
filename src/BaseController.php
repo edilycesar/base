@@ -15,8 +15,8 @@ abstract class BaseController
 
     public function __construct()
     {
-        $this->route = Edily\Base\Register::get('route');
-        $this->dados = Edily\Base\Register::get('dados');
+        $this->route = \Edily\Base\Register::get('route');
+        $this->dados = \Edily\Base\Register::get('dados');
     }
 
     public function getParam($key, $default = '')
