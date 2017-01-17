@@ -33,7 +33,7 @@ class Loader extends Intercept
             $actionName = $this->route->action.'Action';
             $intercept = $this->interceptExists($controllerName, $this->route->action);
             if ($intercept !== false) {
-                //$this->instantiate($controllerFile, $intercept['class'], $intercept['method']);
+                $this->instantiate($controllerFile, $intercept['class'], $intercept['method']);
             }
 
             return $this->instantiate($controllerFile, $controllerName, $actionName);

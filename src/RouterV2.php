@@ -6,7 +6,7 @@ namespace Edily\Base;
  *
  * @author Edily Cesar Medule edilycesar@gmail.com
  */
-class Router
+class RouterV2
 {
     protected $requestItens;
     public $controller, $action, $params;
