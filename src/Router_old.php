@@ -1,7 +1,6 @@
 <?php
 namespace Edily\Base;
 
-
 /**
  * Description of router.
  *
@@ -45,8 +44,7 @@ class Router
 
     private function getAfterPublic($uri)
     {
-        $root = 'sistema/public/'; //URL raiz public sem domínio
-        $uriPublicPos = strlen($root) + strpos($uri, $root);
+        $uriPublicPos = 7 + strpos($uri, 'public/');
 
         return substr($uri, $uriPublicPos);
     }
