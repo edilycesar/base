@@ -1,4 +1,6 @@
 <?php
+namespace Edily\Base;
+
 /**
  * Description of router
  *
