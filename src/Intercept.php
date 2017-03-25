@@ -11,6 +11,11 @@ class Intercept
     public function getItencepts()
     {
         $filename = APP_ROOT.'/intercepts.php';
+        
+        if (file_exists($filename) === false) {
+            return '';
+        }
+        
         $array = require $filename;
 
         return $array;
