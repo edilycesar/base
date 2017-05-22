@@ -31,11 +31,11 @@
     }
 }
 
-/*
-* Important! 
-* Execute the command: "composer dump-autoload" to make changes in only in autoload.
-* Execute the command: "composer update" to make any changes in composer.json.
-*/
+
+### Important! 
+#Execute the command: "composer dump-autoload" to make changes in only in autoload.
+#Execute the command: "composer update" to make any changes in composer.json.
+
 --------------------------------------------------------------------------------
 
 ##.htaccess minnimal example
