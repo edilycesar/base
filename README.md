@@ -105,9 +105,20 @@ class Index extends \Edily\Base\BaseController {
     
     public function indexAction() 
     {
-        echo "Helo World";
+        echo "Hello World in Controller";
+
+        $data['foo'] = "Hello World in View";
+
+        return array("view"=>"emissor/list", "data"=>$data, "layout"=>"site");
+
     }
 }
+
+-------------------------------------------------------------------------------
+
+[View example (/view/index/index.phtml)]
+
+<?php echo $foo ?>
 
 -------------------------------------------------------------------------------
 

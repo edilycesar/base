@@ -1,4 +1,5 @@
 <?php
+
 namespace Edily\Base;
 
 /**
@@ -8,6 +9,7 @@ namespace Edily\Base;
  */
 class View
 {
+
     public $dados;
     public $viewName;
     public $layoutName;
@@ -23,7 +25,7 @@ class View
 
         //Create vars to layout
         foreach ($this->dados as $key => $value) {
-            $name = "view_" . $key;
+            $name = $key;
             $$name = $value;
         }
 
@@ -65,7 +67,7 @@ class View
 
     private function prepareLayoutPath()
     {
-        return VIEW_PATH.'/layout/'.$this->layoutName.'.phtml';
+        return VIEW_PATH . '/layout/' . $this->layoutName . '.phtml';
     }
 
     private function prepareContent($viewName)
@@ -73,7 +75,7 @@ class View
         if (is_null($viewName) || empty($viewName)) {
             return;
         } elseif (!is_array($viewName)) {
-            return VIEW_PATH.'/'.$viewName.'.phtml';
+            return VIEW_PATH . '/' . $viewName . '.phtml';
         } else {
             $views = array();
             foreach ($viewName as $key => $view) {
@@ -92,4 +94,5 @@ class View
         echo $data;
         exit();
     }
+
 }

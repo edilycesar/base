@@ -1,11 +1,6 @@
 <?php
-namespace Edily\Base;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace Edily\Base;
 
 /**
  * Description of Loader.
@@ -14,6 +9,7 @@ namespace Edily\Base;
  */
 class Loader extends Intercept
 {
+
     protected $route;
     public $obj;
 
@@ -25,12 +21,12 @@ class Loader extends Intercept
     public function loadControllerAction()
     {
         $controllerName = ucfirst($this->route->controller) . '';
-        $controllerFile = APP_CONTROLLER_PATH.'/'.$controllerName.'.php';
+        $controllerFile = APP_CONTROLLER_PATH . '/' . $controllerName . '.php';
         if (!file_exists($controllerFile)) {
-            die('Controller não encontrado: '.$controllerFile);
-        } else {           
-            
-            $actionName = $this->route->action.'Action';
+            die('Controller não encontrado: ' . $controllerFile);
+        } else {
+
+            $actionName = $this->route->action . 'Action';
             $intercept = $this->interceptExists($controllerName, $this->route->action);
             if ($intercept !== false) {
                 $this->instantiate($controllerFile, $intercept['class'], $intercept['method']);
@@ -50,13 +46,14 @@ class Loader extends Intercept
     private function instantiate($controllerFile, $controllerName, $actionName)
     {
         $controllerName = "\\" . APP_CONTROLLER_NAMESPACE . "\\" . $controllerName;
-        
+
         $this->obj = new $controllerName();
-        
+
         if (!method_exists($this->obj, $actionName)) {
-            die('Action não encontrada: '.$actionName);
+            die('Action não encontrada: ' . $actionName);
         } else {
             return $this->obj->$actionName();
         }
     }
+
 }
