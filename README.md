@@ -2,7 +2,7 @@
 
 --------------------------------------------------------------------------------
 
-##Structure dir
+## Structure dir
 
 /app/controller
 /app/model
@@ -17,7 +17,7 @@
 
 --------------------------------------------------------------------------------
 
-##composer.json minnimal example
+## "composer.json" minnimal example
 {
    "require": {
         "edily/base": "dev-master"
@@ -39,19 +39,19 @@
 --------------------------------------------------------------------------------
 
 ##.htaccess minnimal example
-# Apache configuration file (see httpd.apache.org/docs/2.2/mod/quickreference.html)
+#Apache configuration file (see httpd.apache.org/docs/2.2/mod/quickreference.html)
 RewriteEngine On
 RewriteRule ^$ index.php [QSA]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 
-# disable directory listing
+#disable directory listing
 Options -Indexes
 
 --------------------------------------------------------------------------------
 
-##/public/index.php example
+## /public/index.php example
 <?php
 session_start();
 require_once '../vendor/autoload.php';
@@ -97,7 +97,7 @@ $view->render($ret);
 
 --------------------------------------------------------------------------------
 
-##Controller example (/app/controller/Index.php)
+## Controller example (/app/controller/Index.php)
 <?php
 namespace App\Controller;
 
@@ -116,13 +116,13 @@ class Index extends \Edily\Base\BaseController {
 
 -------------------------------------------------------------------------------
 
-##View example (/view/index/index.phtml)
+## View example (/view/index/index.phtml)
 
 <?php echo $foo ?>
 
 -------------------------------------------------------------------------------
 
-##Interceps (/app/intercepts.php (middleware))
+## Interceps (/app/intercepts.php (middleware))
 
 <?php
 /*
