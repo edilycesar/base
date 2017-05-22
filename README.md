@@ -33,8 +33,8 @@
 
 
 ### Important! 
-#Execute the command: "composer dump-autoload" to make changes in only in autoload.
-#Execute the command: "composer update" to make any changes in composer.json.
+* Execute the command: "composer dump-autoload" to make changes in only in autoload.
+* Execute the command: "composer update" to make any changes in composer.json.
 
 --------------------------------------------------------------------------------
 
@@ -102,15 +102,12 @@
 >namespace App\Controller;
 >
 >class Index extends \Edily\Base\BaseController {
->    
+>
 >    public function indexAction() 
 >    {
->        echo "Hello World in Controller";
->
->        $data['foo'] = "Hello World in View";
->
->        return array("view"=>"emissor/list", "data"=>$data, "layout"=>"site");
->
+>       echo "Hello World in Controller";
+>       $data['foo'] = "Hello World in View";
+>       return array("view"=>"emissor/list", "data"=>$data, "layout"=>"site");
 >    }
 >}
 
@@ -124,17 +121,12 @@
 
 ## Interceps (/app/intercepts.php (middleware))
 
-ex:
-
+Example:
 ><?php
->/*
-> *  Controller@Action => Controller/Model@method
-> * 
-> *  ex1: "UsuarioController@carregar" => "Autenticar@autenticar",
-> *  ex2: "*@*" => "Permissao@permitir"
-> *  * = coringa
-> *
-> */
+>//Controller@Action => Controller/Model@method
+>//ex1: "UsuarioController@carregar" => "Autenticar@autenticar",
+>//ex2: "*@*" => "Permissao@permitir"
+> //* = coringa
 >
 >return array(
 > 'Index@new' => 'Auth@loginAction',
