@@ -38,7 +38,7 @@
 
 --------------------------------------------------------------------------------
 
-##.htaccess minnimal example
+## .htaccess minnimal example
 >#Apache configuration file (see httpd.apache.org/docs/2.2/mod/quickreference.html)
 >RewriteEngine On
 >RewriteRule ^$ index.php [QSA]
