@@ -68,9 +68,9 @@ $con->write();
 require_once '../vendor/edily/base/config.php';
 require_once FW_ROOT . '/boot.php';
 
- /*
-  * DATABASE CONFIG (Optional)
-  */
+ 
+#DATABASE CONFIG (Optional)
+  
 $database['db1'] = array(
     'driver'    => 'mysql',
     'host'      => 'localhost',
@@ -84,9 +84,7 @@ $database['db1'] = array(
 
 define('DB_CONFIG', json_encode($database));
 
-/*
- * Edily Base
- */
+#Edily Base
 $router = new Edily\Base\Router();
 $loader = new Edily\Base\Loader();
 $ret = $loader->run();
@@ -133,6 +131,7 @@ class Index extends \Edily\Base\BaseController {
  *  * = coringa
  *
  */
+
 ex:
 return array(
  'Index@new' => 'Auth@loginAction',
