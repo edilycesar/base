@@ -49,7 +49,7 @@ class Loader extends Intercept
 
     private function instantiate($controllerFile, $controllerName, $actionName)
     {
-        $controllerName = APP_CONTROLLER_NAMESPACE . "\\" . $controllerName;
+        $controllerName = "\\" . APP_CONTROLLER_NAMESPACE . "\\" . $controllerName;
         
         $this->obj = new $controllerName();
         
