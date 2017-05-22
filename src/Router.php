@@ -26,10 +26,10 @@ class Router {
         Register::set('route', $this);
     }
     
-//    private function getRequestUrI() 
-//    {
-//        return $_SERVER['REQUEST_URI'];
-//    }
+    private function getQueryString() 
+    {
+        return $_SERVER['QUERY_STRING'];
+    }
     
     private function getController() 
     {
@@ -43,23 +43,15 @@ class Router {
     
     private function prepareUri() 
     {
-        //$uri = $this->getRequestUrI();
-        //$uriAP = $this->getAfterPublic($uri);
 	$uriAP = $this->getAfterPublic();
         $this->splitRequest($uriAP);
         $this->prepareParams();
     }
-    
-//    private function getAfterPublic($uri) 
-//    {        
-//        $uriPublicPos = 7 + strpos($uri, "public/");
-//        return substr($uri, $uriPublicPos);
-//    }
 
-    private function getAfterPublic($uri = null) 
+    private function getAfterPublic() 
     {   
-	$pathArr = explode("=", $_SERVER['QUERY_STRING']);
-        return $pathArr[1];
+	$pathArr = explode("=", $this->getQueryString());
+        return isset($pathArr[1]) ? $pathArr[1] : '';
     }
     
     private function splitRequest($uriAP) 

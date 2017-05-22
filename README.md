@@ -31,6 +31,11 @@
     }
 }
 
+/*
+* Important! 
+* Execute the command: "composer dump-autoload" to make changes in only in autoload.
+* Execute the command: "composer update" to make any changes in composer.json.
+*/
 --------------------------------------------------------------------------------
 
 [.htaccess minnimal example]
@@ -39,7 +44,7 @@ RewriteEngine On
 RewriteRule ^$ index.php [QSA]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 
 # disable directory listing
 Options -Indexes
@@ -78,6 +83,17 @@ $database['db1'] = array(
 );
 
 define('DB_CONFIG', json_encode($database));
+
+/*
+ * Edily Base
+ */
+$router = new Edily\Base\Router();
+$loader = new Edily\Base\Loader();
+$ret = $loader->run();
+$view = new Edily\Base\View();
+$view->obj = $loader->obj;//Passa objeto controller instanciado;
+
+$view->render($ret);
 
 --------------------------------------------------------------------------------
 
