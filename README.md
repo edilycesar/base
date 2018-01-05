@@ -1,1 +1,1 @@
-https://raw.githubusercontent.com/edilycesar/base/master/README.md
+https://github.com/edilycesar/base/blob/master/README.txt
