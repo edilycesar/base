@@ -1,0 +1,12 @@
+{
+    "require": {
+        "edily/base": "dev-master"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "App\\Model\\": "app//model", 
+            "App\\Controller\\": "app//controller"
+        }
+    } 
+}
