@@ -1,5 +1,7 @@
 # Readme - base_1.0.0
 
+Example in: vendor/edily/base/examples/example-install
+
 --------------------------------------------------------------------------------
 
 ## Structure dir
