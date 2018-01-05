@@ -1,11 +1,11 @@
 {
     "name"       : "edily/base",
+    "version"    : "2.0.2",
     "description": "Edily\\Base library.",
     "type"       : "library",
     "keywords"   : ["edily", "base"],
     "homepage"   : "http://jeitodigital.com.br/",
-    "license"    : "BSD-3-Clause",
-    "version"    : "2.0.2", 
+    "license"    : "BSD-3-Clause",    
     "authors"    : [
         {
             "name" : "Edily Cesar Medule",

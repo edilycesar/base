@@ -10,7 +10,7 @@ class Redirect
 {
     public static function to($url)
     {
-        Redirect::toUrl($url);
+        self::toUrl($url);
     }
     
     public static function toUrl($url)
