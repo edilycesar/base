@@ -14,22 +14,6 @@ $con->write();
 require_once '../vendor/edily/base/config.php';
 require_once FW_ROOT . '/boot.php';
 
- 
-#DATABASE CONFIG (Optional)
-  
-$database['db1'] = array(
-    'driver'    => 'mysql',
-    'host'      => 'localhost',
-    'database'  => '',
-    'username'  => '',
-    'password'  => '',
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
-);
-
-define('DB_CONFIG', json_encode($database));
-
 /*
 *Edily Base
 */
