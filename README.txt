@@ -135,4 +135,9 @@ return array(
  'User@write' => 'User@isLogged'
 );
 
+## Set controller, action and params by command line
+php index.php user edit id 1 token 123
+file controller action param value param value....
+
+
 
