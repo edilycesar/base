@@ -60,6 +60,8 @@ class View
 
     private function prepareDataRec($dataRec)
     {
+        $dataRec['data'] = isset($dataRec['data']) ? $dataRec['data'] : $dataRec['dados'];
+
         $this->viewName = isset($dataRec['view']) ? $dataRec['view'] : 'index';
         $this->dados = isset($dataRec['data']) ? $dataRec['data'] : null;
         $this->layoutName = isset($dataRec['layout']) ? $dataRec['layout'] : 'layout';
