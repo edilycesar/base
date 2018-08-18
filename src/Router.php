@@ -24,10 +24,10 @@ class Router
         $this->getAction();
 
         //echo "<p>Controller: " . $this->controller . "</p>";
-        //echo "<p>Action: " . $this->action . "</p>"; 
+        //echo "<p>Action: " . $this->action . "</p>";
         //foreach ($this->params as $key => $value) {
         //	echo "<p>Param: " . $key . " = " . $value . "</p>";
-        //}    
+        //}
 
         Register::set('route', $this);
     }
@@ -57,20 +57,26 @@ class Router
 
     private function prepareUri()
     {
-        if(!empty($this->argv)){
+        if (!empty($this->argv)) {
             $this->prepareParamsFromCommandLine();
             return;
         }
-        
+
         $uriAP = $this->getAfterPublic();
         $this->splitRequest($uriAP);
         $this->prepareParams();
     }
-    
+
+//    private function getAfterPublic()
+//    {
+//        $pathArr = explode("=", $this->getQueryString());
+//        return isset($pathArr[1]) ? $pathArr[1] : '';
+//    }
+
     private function getAfterPublic()
     {
-        $pathArr = explode("=", $this->getQueryString());
-        return isset($pathArr[1]) ? $pathArr[1] : '';
+        $fullAddressBar = $this->getHostAddrWithProtocol() . '' . $_SERVER['REQUEST_URI'];
+        return str_replace($this->getBaseUrl(), '', $fullAddressBar);
     }
 
     private function splitRequest($uriAP)
@@ -92,7 +98,7 @@ class Router
             }
         }
     }
-    
+
     private function prepareParamsFromCommandLine()
     {
         $var = $val = "";
@@ -107,6 +113,28 @@ class Router
                 $this->params[$var] = $val;
             }
         }
+    }
+
+    private function getHostAddrWithProtocol()
+    {
+        $base = $_SERVER['REQUEST_SCHEME'] . '://';
+        $base .= $_SERVER['HTTP_HOST'];
+        return $base;
+    }
+
+    private function getBaseUrl($remove = 'public/')
+    {
+        $base = $this->getHostAddrWithProtocol();
+        $scriptFilename = $this->getScriptFileName();
+        $base .= str_replace($scriptFilename, '', $_SERVER['SCRIPT_NAME']);
+        $base = str_replace($remove, '', $base);
+        return $base;
+    }
+
+    private function getScriptFileName()
+    {
+        $parts = explode('/', $_SERVER['SCRIPT_NAME']);
+        return $parts[count($parts) - 1];
     }
 
 }
