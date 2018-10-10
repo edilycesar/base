@@ -15,6 +15,7 @@ class Router
     public $params;
     protected $requestItens;
     private $argv;
+    private $controllerNameSufix;
 
     public function __construct($argv = null)
     {
@@ -32,6 +33,12 @@ class Router
         Register::set('route', $this);
     }
 
+    public function setControllerNameSufix($controllerNameSufix)
+    {
+        $this->controllerNameSufix = $controllerNameSufix;
+        return $this;
+    }
+
     private function getQueryString()
     {
         return isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '';
@@ -41,6 +48,9 @@ class Router
     {
         if (isset($this->argv[1])) {
             $this->controller = $this->argv[1];
+            if (!empty($this->controllerNameSufix)) {
+                $this->controller .= $this->controllerNameSufix;
+            }
             return;
         }
         $this->controller = !empty($this->requestItens[0]) ? $this->requestItens[0] : "Index";
