@@ -29,10 +29,6 @@ class Loader extends Intercept
     {
         $controllerName = ucfirst($this->route->controller) . '';
 
-        if (!empty($this->controllerSufixName)) {
-            $controllerName .= $this->controllerSufixName;
-        }
-
         $controllerFile = APP_CONTROLLER_PATH . '/' . $controllerName;
         $controllerFile .= !empty($this->controllerSufixName) ? $this->controllerSufixName : '';
         $controllerFile .= '.php';
