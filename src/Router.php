@@ -17,9 +17,10 @@ class Router
     private $argv;
     private $controllerNameSufix;
 
-    public function __construct($argv = null)
+    public function __construct($argv = null, $controllerNameSufix = null)
     {
         $this->argv = $argv;
+        $this->controllerNameSufix = $controllerNameSufix;
         $this->prepareUri();
         $this->getController();
         $this->getAction();
@@ -31,12 +32,6 @@ class Router
         //}
 
         Register::set('route', $this);
-    }
-
-    public function setControllerNameSufix($controllerNameSufix)
-    {
-        $this->controllerNameSufix = $controllerNameSufix;
-        return $this;
     }
 
     private function getQueryString()
