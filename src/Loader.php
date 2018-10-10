@@ -12,16 +12,31 @@ class Loader extends Intercept
 
     protected $route;
     public $obj;
+    private $controllerSufixName;
 
     public function __construct()
     {
         $this->route = Register::get('route');
     }
 
+    public function setControllerSufixName($controllerSufixName)
+    {
+        $this->controllerSufixName = $controllerSufixName;
+        return $this;
+    }
+
     public function loadControllerAction()
     {
         $controllerName = ucfirst($this->route->controller) . '';
-        $controllerFile = APP_CONTROLLER_PATH . '/' . $controllerName . '.php';
+
+        if (!empty($this->controllerSufixName)) {
+            $controllerName .= $this->controllerSufixName;
+        }
+
+        $controllerFile = APP_CONTROLLER_PATH . '/' . $controllerName;
+        $controllerFile .= !empty($this->controllerSufixName) ? $this->controllerSufixName : '';
+        $controllerFile .= '.php';
+
         if (!file_exists($controllerFile)) {
             die('Controller não encontrado: ' . $controllerFile);
         } else {
