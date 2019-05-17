@@ -15,10 +15,12 @@ class Router
     public $params;
     protected $requestItens;
     private $argv;
+    private $controllerNameSufix;
 
-    public function __construct($argv = null)
+    public function __construct($argv = null, $controllerNameSufix = null)
     {
         $this->argv = $argv;
+        $this->controllerNameSufix = $controllerNameSufix;
         $this->prepareUri();
         $this->getController();
         $this->getAction();
@@ -41,6 +43,9 @@ class Router
     {
         if (isset($this->argv[1])) {
             $this->controller = $this->argv[1];
+            if (!empty($this->controllerNameSufix)) {
+                $this->controller .= $this->controllerNameSufix;
+            }
             return;
         }
         $this->controller = !empty($this->requestItens[0]) ? $this->requestItens[0] : "Index";
@@ -81,7 +86,14 @@ class Router
 
     private function splitRequest($uriAP)
     {
-        $this->requestItens = explode("/", $uriAP);
+        $this->requestItens = explode("/", $this->removeInvalidCharInUri($uriAP));
+    }
+    
+    private function removeInvalidCharInUri($uri) {
+        while(substr($uri, 0, 1) === "/"){
+            $uri = substr($uri, 1);
+        }
+        return $uri;
     }
 
     private function prepareParams()
