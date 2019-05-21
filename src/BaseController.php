@@ -1,4 +1,5 @@
 <?php
+
 namespace Edily\Base;
 
 /**
@@ -8,6 +9,7 @@ namespace Edily\Base;
  */
 abstract class BaseController
 {
+
     protected $route;
     public $dados;
     public $headCss;
@@ -20,7 +22,57 @@ abstract class BaseController
     }
 
     public function getParam($key, $default = '')
-    {        
+    {
         return isset($this->route->params[$key]) ? $this->route->params[$key] : $default;
-    }    
+    }
+
+    public function getHttpGet($key = '', $default = '')
+    {
+        if (empty($key)) {
+            return $this->route->params;
+        }
+
+        $param = isset($this->route->params[$key]) ? $this->route->params[$key] : $default;
+        return Sanitize::sanitizeString($param);
+    }
+
+    /**
+     * Pega requisições do tipo POST
+     * @obs: se nenhuma chave for passada será retornado todos os POSTs caso haja.
+     * @return mixed.
+     */
+    public function getHttpPost($key = '')
+    {
+        if (!isset($_POST) || empty($_POST)) {
+            return false;
+        }
+
+        $post = Sanitize::sanitizeArray($_POST);
+
+        if (!empty($key)) {
+            return isset($post[$key]) ? $post[$key] : '';
+        }
+
+        if (isset($_FILES) && !empty($_FILES)) {
+            //$files = Sanitize::sanitizeArray($_FILES);
+            $post['http_files'] = $_FILES;
+        }
+
+        return $post;
+    }
+
+    /**
+     * Pega requisições do tipo POST
+     * @obs: se nenhuma chave for passada será retornado todos os POSTs caso haja.
+     * @return mixed.
+     */
+    public function getHttpParam($key = '')
+    {
+        $params = $this->getHttpPost($key);
+        if ($params !== false) {
+            return $params;
+        }
+        return $this->getHttpGet($key);
+    }
+
 }
