@@ -51,9 +51,11 @@ class Loader extends Intercept
 
         if (!method_exists($this->obj, $actionName)) {
             die('Action não encontrada: ' . $actionName);
-        } else {
-            return $this->obj->$actionName();
         }
+
+
+
+        return $this->obj->$actionName();
     }
 
 }
