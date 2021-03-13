@@ -43,11 +43,13 @@ abstract class BaseController
      */
     public function getHttpPost($key = '')
     {
-        if (!isset($_POST) || empty($_POST)) {
+        if (!isset($_POST) || empty($_POST) && (!isset($_FILES) || empty($_FILES) )) {
             return false;
         }
 
-        $post = Sanitize::sanitizeArray($_POST);
+        $post = isset($_POST) ? $_POST : [];
+
+        $post = Sanitize::sanitizeArray($post);
 
         if (!empty($key)) {
             return isset($post[$key]) ? $post[$key] : '';
